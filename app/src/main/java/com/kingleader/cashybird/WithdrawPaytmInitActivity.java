@@ -64,6 +64,7 @@ public class WithdrawPaytmInitActivity extends Activity
         ivPaymentImg = findViewById(R.id.iv_payment_img);
         totalCoinsWDInitTextView = findViewById(R.id.totalCoinsWDInitTextView);
         editTextPayPalEmail = findViewById(R.id.editTextPayPalEmail);
+       // editTextPayPalConfirmEmail = findViewById(R.id.editTextPayPalConfirmEmail);
         withdrawCoins = findViewById(R.id.withdrawCoins);
 
         Bundle bundle= getIntent().getExtras();
@@ -142,8 +143,8 @@ public class WithdrawPaytmInitActivity extends Activity
 
         // NumberFormat numberFormat = NumberFormat.getNumberInstance();
         // numberFormat.setMinimumFractionDigits(2);
-       // numberFormat.setMaximumFractionDigits(2);
-       // final String updatedTotalCoins_ = numberFormat.format(updatedTotalCoins);
+        // numberFormat.setMaximumFractionDigits(2);
+        // final String updatedTotalCoins_ = numberFormat.format(updatedTotalCoins);
 
         Map<String, Object> userProfile_update = new HashMap<>();
         userProfile_update.put("user_earned_coins", Double.valueOf(updatedTotalCoins));
@@ -163,10 +164,10 @@ public class WithdrawPaytmInitActivity extends Activity
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful())
                         {
-                           String unique_id = firebaseFirestore.collection("withdraw_requests").document().getId();
-                           firebaseFirestore.collection("withdraw_requests")
-                                   .document(unique_id)
-                                   .set(userProfile_Add_ToWithdrawRequest);
+                            String unique_id = firebaseFirestore.collection("withdraw_requests").document().getId();
+                            firebaseFirestore.collection("withdraw_requests")
+                                    .document(unique_id)
+                                    .set(userProfile_Add_ToWithdrawRequest);
                             dialog.dismiss();
                             showConfirmationToUser();
                         }
@@ -235,12 +236,12 @@ public class WithdrawPaytmInitActivity extends Activity
             Toast.makeText(this,"Incorrect Email ID",Toast.LENGTH_SHORT).show();
             return false;
         }
-       /* if(!editTextPayPalEmail.getText().toString().matches(emailPattern))
+        if(!editTextPayPalEmail.getText().toString().matches(emailPattern))
         {
             Toast.makeText(this,"Incorrect Confirm Email ID",Toast.LENGTH_SHORT).show();
             return false;
         }
-        if(!editTextPayPalEmail.getText().toString().equalsIgnoreCase(editTextPayPalConfirmEmail.getText().toString()))
+       /* if(!editTextPayPalEmail.getText().toString().equalsIgnoreCase(editTextPayPalConfirmEmail.getText().toString()))
         {
             Toast.makeText(this,"Email and Confirm Email Doesn't Match",Toast.LENGTH_LONG).show();
             return false;
@@ -250,8 +251,8 @@ public class WithdrawPaytmInitActivity extends Activity
             Toast.makeText(this,"Enter Number of Coins to Withdraw",Toast.LENGTH_LONG).show();
             return false;
         }
-     //   return editTextPayPalEmail.getText().toString().equalsIgnoreCase(editTextPayPalConfirmEmail.getText().toString());
-    return true;
+       // return editTextPayPalEmail.getText().toString().equalsIgnoreCase(editTextPayPalConfirmEmail.getText().toString());
+   return true;
     }
 
 

@@ -7,7 +7,6 @@ import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 
@@ -22,7 +21,7 @@ public class StartActivity extends Activity
     int[] bird;
     private Timer timer;
     int currentFrame = 0;
-    ImageView casytxt;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,7 +30,6 @@ public class StartActivity extends Activity
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         imageBirdStart= findViewById(R.id.imageBirdStart);
-        casytxt= findViewById(R.id.casytxt);
 
         bird = new int[8];
         bird[0] = R.drawable.bird_frame1;

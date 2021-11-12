@@ -171,7 +171,7 @@
             android:layout_marginTop="80dp"
             android:layout_width="@dimen/space100"
             android:layout_height="95dp"
-            android:src="@drawable/ic_vector">
+            android:src="@drawable/star2">
 
         </ImageView>
 
@@ -181,7 +181,7 @@
             android:layout_marginTop="70dp"
             android:layout_width="120dp"
             android:layout_height="115dp"
-            android:src="@drawable/ic_vector__1_">
+            android:src="@drawable/ic_star">
 
         </ImageView>
 
@@ -190,7 +190,7 @@
             android:layout_marginTop="80dp"
             android:layout_width="@dimen/space100"
             android:layout_height="75dp"
-            android:src="@drawable/ic_vector__2_">
+            android:src="@drawable/star3">
 
         </ImageView>
     </LinearLayout>

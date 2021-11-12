@@ -30,7 +30,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -114,10 +113,9 @@ public class MainActivity extends Activity implements MaxAdViewAdListener {
     private final String LATEST_APP_VERSION_CODE = "latest_version_code";
     private final String REWARD_VIDEO_LIMIT = "reward_video_daily_limit";
     private final String TAG = "REWARDED_VIDEO_TAG";
-    ImageView rewardVideoImage;
-    ImageView imageBird;
+    ImageButton imageBird, rewardVideoImage;
     int[] bird, rewardVdImg;
-    int currentFrame = 0, currentFramimageBirdeRewardVDImg = 0;
+    int currentFrame = 0, currentFrameRewardVDImg = 0;
     Dialog noInternetDialog, rewardedVideoDialog, coinsAddSuccessDialog;
     Button itsOkayButton;
     Button turnOnButton;
@@ -155,7 +153,6 @@ public class MainActivity extends Activity implements MaxAdViewAdListener {
     private String fbInterAdScreen = "";
     private String maxInterAdScreen = "";
     AlertDialog progressDialog;
-    ImageView share,profile_edit,playBtn,moneybag,rate,leaderboard;
 
     private static Uri getImageUri(Context context, View view, String fileName) throws IOException {
         Bitmap bitmap = loadBitmapFromView(view);
@@ -202,7 +199,7 @@ public class MainActivity extends Activity implements MaxAdViewAdListener {
     protected void onCreate(Bundle savedInstanceState) {
 //        setTheme(R.style.MainAppTheme);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_act);
+        setContentView(R.layout.activity_main);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         progressDialog = AppConstants.getDialogProgressBar(MainActivity.this, getResources().getString(R.string.please_wait)).create();
@@ -211,16 +208,8 @@ public class MainActivity extends Activity implements MaxAdViewAdListener {
         firebaseUser = firebaseAuth.getCurrentUser();
         firebaseFirestore = FirebaseFirestore.getInstance();
 
-        rlMain = findViewById(R.id.rl_main1);
-        share= findViewById(R.id.imageButton);
-        profile_edit= findViewById(R.id.imageView2);
-        playBtn= findViewById(R.id.imageButton2);
-        moneybag= findViewById(R.id.withdraw_moneybag);
-        rate= findViewById(R.id.rating_btn);
-        leaderboard= findViewById(R.id.leaderboardbtn);
-        rewardVideoImage=findViewById(R.id.rewardVideoImage);
-
-        //  rlMain.setBackgroundResource(AppConstants.get());
+        rlMain = findViewById(R.id.rl_main);
+        rlMain.setBackgroundResource(AppConstants.get());
 
 //        requestPermission();
         // adsAuthorization = new AdsAuthorization(this);
@@ -234,7 +223,7 @@ public class MainActivity extends Activity implements MaxAdViewAdListener {
         imageBird = findViewById(R.id.imageBird);
         rewardVideoImage = findViewById(R.id.rewardVideoImage);
 
-       /* bird = new int[8];
+        bird = new int[8];
         bird[0] = R.drawable.bird_frame1;
         bird[1] = R.drawable.bird_frame2;
         bird[2] = R.drawable.bird_frame3;
@@ -250,7 +239,7 @@ public class MainActivity extends Activity implements MaxAdViewAdListener {
         rewardVdImg[2] = R.drawable.c3;
         rewardVdImg[3] = R.drawable.c4;
 
-        AnimationHandlerInitiate();*/
+        AnimationHandlerInitiate();
         saveUserRecentOnline();
         isFacebookInstalled();
         int bg = AppConstants.getBg();
@@ -919,7 +908,7 @@ public class MainActivity extends Activity implements MaxAdViewAdListener {
         }
     }
 
-   /* private void AnimationHandlerInitiate() {
+    private void AnimationHandlerInitiate() {
         final Handler handler = new Handler(Looper.getMainLooper());
 
         final Runnable runnable = new Runnable() {
@@ -952,7 +941,7 @@ public class MainActivity extends Activity implements MaxAdViewAdListener {
         currentFrameRewardVDImg++;
         if (currentFrameRewardVDImg == 3)
             currentFrameRewardVDImg = 0;
-    }*/
+    }
 
     private void playSound(){
         MediaPlayer mp = MediaPlayer.create(this,R.raw.click_sound);
@@ -1197,7 +1186,7 @@ public class MainActivity extends Activity implements MaxAdViewAdListener {
             startActivity(intent);
         }
         else if (screen.equals(WITHDRAW)) {
-            Intent intent = new Intent(MainActivity.this, WithdrawMainActivity.class);
+            Intent intent = new Intent(MainActivity.this, WithdrawPaytmActivity.class);
             startActivity(intent);
         }
     }
