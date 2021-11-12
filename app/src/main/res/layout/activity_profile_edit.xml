@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/frame1"
+    android:keepScreenOn="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/imageBirdRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bird_frame1" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Profile Update"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="22sp"
+                android:fontFamily="monospace"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:id="@+id/editTextFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edittext_capsule"
+                android:hint="@string/first_name"
+                android:inputType="textCapWords"
+                android:padding="15dp"
+                android:textSize="@dimen/text_size_14"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorGray"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edittext_capsule"
+                android:hint="@string/last_name"
+                android:textColorHint="@color/colorGray"
+                android:inputType="textCapWords"
+                android:padding="15dp"
+                android:textSize="@dimen/text_size_14"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:id="@+id/editTextUserEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edittext_capsule"
+                android:hint="PayPal Email ID"
+                android:textColorHint="@color/colorGray"
+                android:inputType="textEmailAddress"
+                android:padding="15dp"
+                android:textSize="@dimen/text_size_14"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:id="@+id/editTextUserMobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edittext_capsule"
+                android:hint="Mobile Number"
+                android:textColorHint="@color/colorGray"
+                android:inputType="number|phone"
+                android:padding="15dp"
+                android:textSize="@dimen/text_size_14"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+            <AutoCompleteTextView
+                android:id="@+id/editTextUserCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space10"
+                android:background="@drawable/edittext_capsule"
+                android:hint="Country"
+                android:textColorHint="@color/colorGray"
+                android:padding="15dp"
+                android:textSize="@dimen/text_size_14"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:background="@drawable/edittext_capsule"
+                android:gravity="center">
+
+                <RadioButton
+                    android:id="@+id/radioButtonUserMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_18"
+                    android:textColor="@color/colorGreyDark"
+                    android:layout_marginRight="@dimen/space40"
+                    android:layout_marginEnd="@dimen/space40"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonUserFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorGreyDark"
+                    android:textSize="@dimen/text_size_18"
+                    android:text="Female" />
+
+            </RadioGroup>
+
+            <Button
+                android:layout_width="170dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/save_button"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"
+                android:onClick="saveButtonClicked"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/vungle_banner_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/banner_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/adViewMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+
+    </LinearLayout>
+</RelativeLayout>

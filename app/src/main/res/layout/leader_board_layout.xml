@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back3"
+    android:keepScreenOn="true">
+
+    <ScrollView
+        android:id="@+id/scrollViewParent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/topLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/space20"
+                android:orientation="vertical" >
+
+
+                <ImageView
+                    android:layout_width="@dimen/space200"
+                    android:layout_height="@dimen/space80"
+                    android:layout_gravity="center"
+                    android:src="@drawable/cashybirdtext"/>
+
+
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_below="@id/topLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/space20"
+            android:layout_marginRight="@dimen/space20"
+            android:padding="@dimen/space10"
+            android:background="@drawable/loginblueshape"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/space20"
+                android:weightSum="100">
+
+                <TextView
+                    android:layout_marginTop="@dimen/space10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="S.No"
+                    android:lines="2"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/text_size_18"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:layout_weight="10" />
+
+                <TextView
+                    android:layout_marginTop="@dimen/space10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Player\nName"
+                    android:lines="2"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/text_size_18"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:layout_weight="60" />
+
+                <TextView
+                    android:layout_marginTop="@dimen/space10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Best\nScore"
+                    android:lines="2"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/text_size_18"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:layout_weight="15"/>
+
+                <TextView
+                    android:layout_marginTop="@dimen/space10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Check\nout"
+                    android:lines="2"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/text_size_18"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:layout_weight="15"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/space10"
+                android:background="@color/active_dots_visitsLikes">
+            </View>
+            <ListView
+                android:id="@+id/gemUserList"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_gravity="center">
+
+            </ListView>
+        </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/leaderBoardFooter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/space50"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/space10"
+                android:text="Every week top 10 gems will be announced!"
+                android:textColor="@color/active_dots_visitsLikes"
+                android:textSize="@dimen/text_size_20"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/vungle_banner_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/banner_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/adViewMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+
+    </LinearLayout>
+</RelativeLayout>

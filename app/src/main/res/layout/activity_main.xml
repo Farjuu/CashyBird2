@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rl_main"
+    android:background="@drawable/background"
+    android:keepScreenOn="true">
+
+    <ImageView
+        android:layout_width="@dimen/space40"
+        android:layout_height="@dimen/space40"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/space10"
+        android:layout_marginRight="@dimen/space10"
+        android:layout_marginEnd="@dimen/space10"
+        android:onClick="informationSupportActivityInit"
+        android:background="@drawable/information2" />
+
+    <ImageView
+        android:layout_width="@dimen/space40"
+        android:layout_height="@dimen/space40"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/space60"
+        android:layout_marginRight="@dimen/space10"
+        android:layout_marginEnd="@dimen/space10"
+        android:onClick="ProfileEditActivityInit"
+        android:background="@drawable/edit_profile3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/text_size_30"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="CASHIFLY"
+            android:textSize="@dimen/text_size_32"
+            android:fontFamily="verdana"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="50dp"
+            android:textColor="@color/colorPinkLight"/>
+
+        <ImageButton
+            android:id="@+id/imageBird"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bird_frame5" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/centerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerInParent="true">
+
+        <ImageButton
+            android:id="@+id/rewardVideoImage"
+            android:layout_width="@dimen/space100"
+            android:layout_height="80dp"
+            android:layout_marginBottom="@dimen/space10"
+            android:background="@drawable/c1"
+            android:onClick="displayRewardedVideo"/>
+
+        <ImageButton
+            android:layout_width="155dp"
+            android:layout_height="155dp"
+            android:background="@drawable/ic_play"
+            android:onClick="startGame" />
+
+    </LinearLayout>
+
+<!--        <TextView-->
+<!--        android:id="@+id/textView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:text="Play"-->
+<!--        android:textSize="34sp"-->
+<!--        android:layout_below="@+id/imageButton"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:textColor="@android:color/holo_red_dark"/>-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/centerLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <ImageButton
+                android:layout_width="160dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="25dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/withdraw_button"
+                android:onClick="withdraw" />
+
+            <ImageButton
+                android:layout_width="160dp"
+                android:layout_height="80dp"
+                android:background="@drawable/leaderboard_button"
+                android:onClick="leaderBoardClicked"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/space10"
+            android:padding="10dp"
+            android:gravity="center">
+
+            <ImageButton
+                android:layout_width="160dp"
+                android:layout_height="80dp"
+                android:background="@drawable/share_button"
+                android:onClick="shareGame"
+                android:layout_marginRight="25dp"
+                android:layout_marginEnd="25dp"/>
+
+            <ImageButton
+                android:layout_width="160dp"
+                android:layout_height="80dp"
+                android:background="@drawable/rate_button"
+                android:onClick="rateGame"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/banner_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <LinearLayout
+            android:id="@+id/vungle_banner_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/adViewMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+<!--       <com.applovin.mediation.ads.MaxAdView-->
+<!--           android:layout_width="match_parent"-->
+<!--           android:layout_height="@dimen/banner_height"-->
+<!--           android:background="@color/colorWhite"-->
+<!--           xmlns:maxads="http://schemas.applovin.com/android/1.0"-->
+<!--           maxads:adUnitId="YOUR_AD_UNIT_ID"/>-->
+    </LinearLayout>
+
+</RelativeLayout>
