@@ -279,7 +279,7 @@ public class LeaderBoard extends Activity implements MaxAdViewAdListener
         String heading = firebaseRemoteConfig.getString(LeaderBoardHeading);
         String footer = firebaseRemoteConfig.getString(LeaderBoardFooter);
 
-        leaderBoardHeading.setText(heading);
+      //  leaderBoardHeading.setText(heading);
         leaderBoardFooter.setText(footer);
 
         String userName1 = firebaseRemoteConfig.getString(player1_name);

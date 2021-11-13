@@ -104,7 +104,7 @@ public class GameOver extends Activity implements MaxAdViewAdListener {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.game_over);
+        setContentView(R.layout.gameover);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         retry_enable_Ads = false;
         firebaseSaved_retry_enable = false;
@@ -153,11 +153,11 @@ public class GameOver extends Activity implements MaxAdViewAdListener {
 
         tvScore = findViewById(R.id.tvScore);
         tvPersonalBest = findViewById(R.id.tvPersonalBest);
-        earnedCoinsHeadingTextView = findViewById(R.id.earnedCoinsHeadingTextView);
-        earnedCoinsTextView = findViewById(R.id.earnedCoinsTextView);
+       // earnedCoinsHeadingTextView = findViewById(R.id.earnedCoinsHeadingTextView);
+       // earnedCoinsTextView = findViewById(R.id.earnedCoinsTextView);
         rlGameOver = findViewById(R.id.rl_game_over);
 
-        rlGameOver.setBackgroundResource(AppConstants.get());
+       // rlGameOver.setBackgroundResource(AppConstants.get());
 
         tvScore.setText("" + score);
         tvPersonalBest.setText("" + scoreSP);
@@ -169,27 +169,27 @@ public class GameOver extends Activity implements MaxAdViewAdListener {
                 if (haveNetworkConnection())
                 {
                     saveScoreAndCoins(scoreSP, EarnedCoins_);
-                    earnedCoinsHeadingTextView.setText("Earned Coins");
+                    //earnedCoinsHeadingTextView.setText("Earned Coins");
                 }
                 else {
                     displayCoinsNotSavedDialog();
-                    earnedCoinsHeadingTextView.setVisibility(View.GONE);
-                    earnedCoinsTextView.setVisibility(View.GONE);
+                   // earnedCoinsHeadingTextView.setVisibility(View.GONE);
+                   // earnedCoinsTextView.setVisibility(View.GONE);
                 }
             }
             else // score <= 5
             {
-                earnedCoinsHeadingTextView.setTextSize(12);
-                earnedCoinsHeadingTextView.setPadding(1, 5, 1, 5);
-                earnedCoinsHeadingTextView.setText(" Coins get counted when score >5 ");
+                //earnedCoinsHeadingTextView.setTextSize(12);
+               // earnedCoinsHeadingTextView.setPadding(1, 5, 1, 5);
+               // earnedCoinsHeadingTextView.setText(" Coins get counted when score >5 ");
                 //earnedCoinsHeadingTextView.setVisibility(View.GONE);
-                earnedCoinsTextView.setVisibility(View.GONE);
+               // earnedCoinsTextView.setVisibility(View.GONE);
             }
         }
         else // score == 0
-        {
+        {/*
             earnedCoinsHeadingTextView.setVisibility(View.GONE);
-            earnedCoinsTextView.setVisibility(View.GONE);
+            earnedCoinsTextView.setVisibility(View.GONE);*/
         }
     }
 
@@ -207,20 +207,20 @@ public class GameOver extends Activity implements MaxAdViewAdListener {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
                     firebaseRemoteConfig.activate();
-                    checkForUpdateParameters();
+                   // checkForUpdateParameters();
                 }
             }
         });
     }
 
-    private void checkForUpdateParameters()
+    /*private void checkForUpdateParameters()
     {
         String text = firebaseRemoteConfig.getString(EARNEED_COINS_HEADING_TEXT);
         if (score <= 5)
             earnedCoinsHeadingTextView.setText(text);
         else
             earnedCoinsHeadingTextView.setText("Earned Coins");
-    }
+    }*/
 
     private void displayCoinsNotSavedDialog() {
         noInternetDialog.setContentView(R.layout.popup_nointernet_nocoins_saved);
