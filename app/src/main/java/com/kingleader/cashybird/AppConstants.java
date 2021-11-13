@@ -27,7 +27,7 @@ public class AppConstants {
   static int distanceBetweenTubes;
   static SoundBank soundBank;
   static Context gameActivityContext;
-  static int[] backgroundArray = {R.drawable.background,};
+  static int[] backgroundArray = {R.drawable.frame1,R.drawable.frame2,R.drawable.frame3,R.drawable.frame4,};
   static int[] gameoverbackArray = {R.drawable.gameoverback,};
 
 
